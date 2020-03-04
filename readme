@@ -1,0 +1,29 @@
+公式ドキュメント
+https://docs.docker.com/compose/django/
+
+Djangoプロジェクト作成
+docker-compose run web django-admin startproject composeexample .
+
+アプリケーションの雛形を作る
+docker-compose run web python3 manage.py startapp polls
+
+マイグレーションファイルの作成
+docker-compose run web python manage.py makemigrations
+
+マイグレーション
+docker-compose run --rm web python3 manage.py migrate
+
+データーベース 操作(rails c?)
+docker-compose run web python manage.py shell
+例
+Question.objects.all()
+q=…
+Q.save
+
+admin作成
+docker-compose run web python manage.py createsuperuser
+
+docker-compose run web python manage.py runserver
+
+初期データの投入
+Docker-compose run web python manage.py loadmaster person.join
